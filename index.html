@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แพรพลอย สิงห์ทองชัย | ระบบรายงานผลงานและประวัติส่วนบุคคล</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Glassmorphism Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. SPLASH SCREEN (แสดงเมื่อเข้าหน้าเว็บครั้งแรกและรีเฟรชหน้าจอ)
+       ========================================================================= -->
+  <aside id="splashScreen" class="splash-screen" aria-label="หน้าจอต้อนรับ">
+    <!-- Ambient Background Decoration for Splash -->
+    <div class="splash-decoration">
+      <div class="splash-orb splash-orb-1"></div>
+      <div class="splash-orb splash-orb-2"></div>
+      <div class="splash-orb splash-orb-3"></div>
+      <div class="bg-grid-overlay"></div>
+    </div>
+
+    <!-- Frosted Glass Splash Card -->
+    <div class="splash-card">
+      <div class="splash-avatar-wrapper">
+        <div class="splash-avatar-glow"></div>
+        <img src="247372.jpg" alt="แพรพลอย สิงห์ทองชัย" class="splash-avatar-img">
+      </div>
+      <span class="splash-badge">
+        <i class="fas fa-sparkles"></i> Personal Portfolio &amp; Report
+      </span>
+      <h1 class="splash-title">นางสาวแพรพลอย สิงห์ทองชัย</h1>
+      <p class="splash-subtitle">นักวิเคราะห์นโยบายและแผนปฏิบัติการ</p>
+
+      <div class="splash-progress-wrapper">
+        <div class="splash-progress-bar">
+          <div id="splashProgressFill" class="splash-progress-fill"></div>
+        </div>
+        <div class="splash-status-text">
+          <span>กำลังโหลดระบบข้อมูล...</span>
+          <span id="splashPercent">0%</span>
+        </div>
+      </div>
+
+      <button id="splashSkipBtn" class="splash-skip-btn">
+        ข้ามเพื่อเข้าสู่หน้าเว็บ <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       AMBIENT GLOWING MESH ORBS & BACKGROUND DECORATION
+       ========================================================================= -->
+  <div class="ambient-background" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+    <div class="ambient-orb orb-4"></div>
+    <div class="bg-grid-overlay"></div>
+  </div>
+
+  <!-- =========================================================================
+       FROSTED GLASS NAVIGATION BAR
+       ========================================================================= -->
+  <header class="main-header">
+    <nav class="nav-container" aria-label="แถบนำทางหลัก">
+      <a href="#profileHero" class="nav-brand">
+        <img src="247372.jpg" alt="แพรพลอย สิงห์ทองชัย" class="nav-avatar-mini">
+        <div>
+          <div class="brand-text-name">แพรพลอย สิงห์ทองชัย</div>
+          <div class="brand-text-role">นักวิเคราะห์นโยบายและแผนปฏิบัติการ</div>
+        </div>
+      </a>
+
+      <!-- 5 Menus requested + profile link -->
+      <ul id="navMenu" class="nav-menu">
+        <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> 1. ประวัติการศึกษา</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fas fa-address-book"></i> 2. สถานที่ติดต่อ</a></li>
+        <li><a href="#educationSummary" class="nav-link"><i class="fas fa-award"></i> 3. วุฒิและกิจกรรม</a></li>
+        <li><a href="#skills" class="nav-link"><i class="fas fa-lightbulb"></i> 4. ความสามารถพิเศษ</a></li>
+        <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> 5. ประสบการณ์ทำงาน</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="printReportBtn" class="glass-btn glass-btn-secondary" title="พิมพ์หรือส่งออกเป็น PDF">
+          <i class="fas fa-print"></i> <span>พิมพ์รายงาน</span>
+        </button>
+        <button id="menuToggle" class="menu-toggle" aria-label="เปิดเมนู">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT
+       ========================================================================= -->
+  <main class="main-content">
+
+    <!-- HERO SECTION: PROFILE & SUMMARY -->
+    <section id="profileHero" class="glass-card hero-glass-card">
+      <div class="hero-visual">
+        <div class="hero-image-frame">
+          <img src="247372.jpg" alt="ภาพถ่าย นางสาวแพรพลอย สิงห์ทองชัย" class="hero-portrait">
+        </div>
+        <div class="hero-status-pill">
+          <span class="pulse-dot"></span>
+          <span>พร้อมร่วมงานและผลักดันยุทธศาสตร์</span>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-tags">
+          <span class="glass-badge cyan"><i class="fas fa-chart-line"></i> นโยบายและแผน</span>
+          <span class="glass-badge violet"><i class="fas fa-brain"></i> วิเคราะห์ข้อมูลและ AI</span>
+          <span class="glass-badge emerald"><i class="fas fa-handshake"></i> บริหารโครงการ</span>
+        </div>
+
+        <h2 class="hero-name">นางสาวแพรพลอย สิงห์ทองชัย</h2>
+        <div class="hero-role-title">
+          <i class="fas fa-id-badge"></i> นักวิเคราะห์นโยบายและแผนปฏิบัติการ
+        </div>
+
+        <div class="hero-profile-bio">
+          นักวิเคราะห์นโยบายและแผนระดับปฏิบัติการ ทำหน้าที่ด้านการวิเคราะห์ข้อมูลเชิงนโยบาย การจัดทำแผนยุทธศาสตร์ ข้อเสนอโครงการ คำของบประมาณ และการติดตามประเมินผลโครงการ มีความสามารถในการประสานความร่วมมือกับสถาบันอุดมศึกษา หน่วยงานภาครัฐ ภาคเอกชน และผู้มีส่วนได้ส่วนเสีย สามารถแก้ไขปัญหาเฉพาะหน้า บริหารงานเร่งด่วน และจัดลำดับความสำคัญได้อย่างมีประสิทธิภาพ รวมถึงสามารถประยุกต์ใช้เทคโนโลยีและเครื่องมือ AI เพื่อสนับสนุนการค้นคว้า วิเคราะห์ข้อมูล จัดทำเอกสาร และพัฒนางานนำเสนอ
+        </div>
+
+        <div class="hero-highlights-grid">
+          <div class="highlight-box">
+            <div class="highlight-number">4+ ปี</div>
+            <div class="highlight-label">ประสบการณ์ทำงานและบริหาร</div>
+          </div>
+          <div class="highlight-box">
+            <div class="highlight-number">อว.</div>
+            <div class="highlight-label">กระทรวงการอุดมศึกษาฯ</div>
+          </div>
+          <div class="highlight-box">
+            <div class="highlight-number">วท.บ.</div>
+            <div class="highlight-label">สถิติธุรกิจและการประกันภัย</div>
+          </div>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#contact" class="glass-btn glass-btn-primary">
+            <i class="fas fa-paper-plane"></i> ติดต่อประสานงาน
+          </a>
+          <a href="#experience" class="glass-btn glass-btn-secondary">
+            <i class="fas fa-file-alt"></i> ดูผลงานและประสบการณ์
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: ประวัติการศึกษา (EDUCATION) -->
+    <section id="education" class="section-wrapper">
+      <div class="section-header">
+        <div class="section-tag"><i class="fas fa-graduation-cap"></i> EDUCATION BACKGROUND</div>
+        <h3 class="section-title">
+          <span class="section-title-icon"><i class="fas fa-user-graduate"></i></span>
+          1. ประวัติการศึกษา
+        </h3>
+        <p class="section-subtitle">เส้นทางการศึกษาตั้งแต่ระดับประถมศึกษา มัธยมศึกษา จนถึงระดับปริญญาตรี</p>
+      </div>
+
+      <div class="education-grid">
+        <!-- KMUTNB -->
+        <article class="glass-card education-card">
+          <div class="edu-top">
+            <div class="edu-level-badge">
+              <span class="glass-badge cyan"><i class="fas fa-university"></i> ระดับอุดมศึกษา (ปริญญาตรี)</span>
+            </div>
+            <h4 class="edu-degree">ปริญญาวิทยาศาสตร์บัณฑิต (วท.บ.)</h4>
+            <div class="edu-major">สาขาวิชาสถิติธุรกิจและการประกันภัย</div>
+            <div class="edu-institution">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</span>
+            </div>
+          </div>
+          <div class="edu-footer">
+            <span><i class="far fa-calendar-alt"></i> พ.ศ. 2558 – 2563</span>
+            <span class="glass-badge violet"><i class="fas fa-check-circle"></i> สำเร็จการศึกษา</span>
+          </div>
+        </article>
+
+        <!-- High School -->
+        <article class="glass-card education-card">
+          <div class="edu-top">
+            <div class="edu-level-badge">
+              <span class="glass-badge violet"><i class="fas fa-school"></i> ระดับมัธยมศึกษา</span>
+            </div>
+            <h4 class="edu-degree">มัธยมศึกษาปีที่ 1 - มัธยมศึกษาปีที่ 6</h4>
+            <div class="edu-major">สายการเรียนวิทย์ - คณิต</div>
+            <div class="edu-institution">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>โรงเรียนมัธยมวัดมกุฏกษัตริย์</span>
+            </div>
+          </div>
+          <div class="edu-footer">
+            <span><i class="far fa-calendar-alt"></i> ระดับมัธยมศึกษาตอนปลาย</span>
+            <span class="glass-badge emerald"><i class="fas fa-atom"></i> วิทย์-คณิต</span>
+          </div>
+        </article>
+
+        <!-- Primary School -->
+        <article class="glass-card education-card">
+          <div class="edu-top">
+            <div class="edu-level-badge">
+              <span class="glass-badge magenta"><i class="fas fa-book-reader"></i> ระดับประถมศึกษา</span>
+            </div>
+            <h4 class="edu-degree">ประถมศึกษาปีที่ 1 - ประถมศึกษาปีที่ 6</h4>
+            <div class="edu-major">หลักสูตรการศึกษาขั้นพื้นฐาน</div>
+            <div class="edu-institution">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>โรงเรียนวัดโสมนัส</span>
+            </div>
+          </div>
+          <div class="edu-footer">
+            <span><i class="far fa-calendar-alt"></i> ระดับประถมศึกษา</span>
+            <span class="glass-badge cyan"><i class="fas fa-check"></i> สำเร็จการศึกษา</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ประสบการณ์ทำงาน (WORK EXPERIENCE) -->
+    <section id="experience" class="section-wrapper">
+      <div class="section-header">
+        <div class="section-tag"><i class="fas fa-briefcase"></i> CAREER &amp; PROFESSIONAL RECORD</div>
+        <h3 class="section-title">
+          <span class="section-title-icon"><i class="fas fa-history"></i></span>
+          5. ประสบการณ์ทำงาน (Work Experience)
+        </h3>
+        <p class="section-subtitle">ประสบการณ์การทำงานทั้งในหน่วยงานภาครัฐระดับกระทรวงและภาคเอกชน</p>
+      </div>
+
+      <div class="experience-timeline">
+        <!-- 1. ปัจจุบัน: นักวิเคราะห์นโยบายและแผนปฏิบัติการ อว. -->
+        <article class="glass-card exp-card">
+          <div class="exp-marker current">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="exp-header">
+            <div class="exp-role-group">
+              <h4 class="exp-role">
+                นักวิเคราะห์นโยบายและแผนปฏิบัติการ
+                <span class="glass-badge cyan"><i class="fas fa-clock"></i> งานปัจจุบัน</span>
+              </h4>
+              <div class="exp-company">
+                กลุ่มขับเคลื่อนและพัฒนา อววน.2 | กองขับเคลื่อนและพัฒนาการอุดมศึกษา วิทยาศาสตร์ วิจัยและนวัตกรรม
+              </div>
+              <div class="exp-org-detail">
+                <i class="fas fa-building-columns"></i> สำนักงานปลัดกระทรวงการอุดมศึกษา วิทยาศาสตร์ วิจัยและนวัตกรรม (อว.)
+              </div>
+            </div>
+            <div class="exp-period-badge">
+              <i class="far fa-calendar-check"></i> 1 ก.พ. 2567 – ปัจจุบัน
+            </div>
+          </div>
+
+          <ul class="exp-duties-list">
+            <li>ศึกษาวิเคราะห์ และสังเคราะห์ข้อมูลเชิงนโยบาย เพื่อสนับสนุนการจัดทำนโยบายและแผนยุทธศาสตร์ด้านการอุดมศึกษา วิทยาศาสตร์ วิจัยและนวัตกรรมของประเทศ</li>
+            <li>จัดทำแผนปฏิบัติราชการประจำปี ข้อเสนอโครงการ และคำของบประมาณของหน่วยงาน ให้สอดคล้องกับยุทธศาสตร์และนโยบายระดับประเทศ</li>
+            <li>ประสานความร่วมมือกับสถาบันอุดมศึกษา หน่วยงานภาครัฐ ภาคเอกชน และภาคีเครือข่าย เพื่อผลักดันโครงการให้บรรลุเป้าหมาย</li>
+            <li>ติดตาม ประเมินผล และวิเคราะห์ตัวชี้วัดความสำเร็จ (KPIs) ของโครงการ พร้อมจัดทำรายงานผลและข้อเสนอแนะเชิงนโยบายสำหรับผู้บริหาร</li>
+            <li>สนับสนุนการขับเคลื่อนโครงการ Talent Mobility และโครงการด้านการพัฒนากำลังคน การวิจัย และนวัตกรรม</li>
+            <li>จัดทำข้อมูลประกอบการประชุม เอกสารเชิงนโยบาย รายงานสรุป และหนังสือราชการที่เกี่ยวข้อง</li>
+            <li>อำนวยความสะดวกและประสานงานการประชุมเชิงนโยบาย การประชุมเชิงปฏิบัติการ และกิจกรรมร่วมกับผู้มีส่วนได้ส่วนเสีย</li>
+            <li>ปฏิบัติงานด้านการบริหารโครงการและภารกิจอื่นตามที่ได้รับมอบหมาย</li>
+          </ul>
+        </article>
+
+        <!-- 2. เจ้าหน้าที่จัดซื้อ บริษัท เกรทไวท์เวล จำกัด -->
+        <article class="glass-card exp-card">
+          <div class="exp-marker">
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+          <div class="exp-header">
+            <div class="exp-role-group">
+              <h4 class="exp-role">เจ้าหน้าที่จัดซื้อ</h4>
+              <div class="exp-company">บริษัท เกรทไวท์เวล จำกัด</div>
+            </div>
+            <div class="exp-period-badge">
+              <i class="far fa-calendar-alt"></i> พ.ย. 2566 – ก.พ. 2567
+            </div>
+          </div>
+
+          <ul class="exp-duties-list">
+            <li>ดำเนินการจัดซื้อสินค้า วัตถุดิบ อุปกรณ์ และบริการให้ตรงตามความต้องการของแต่ละหน่วยงาน</li>
+            <li>ติดต่อผู้ขายเพื่อขอใบเสนอราคา เปรียบเทียบราคา คุณภาพ เงื่อนไขการชำระเงิน และระยะเวลาการส่งมอบ</li>
+            <li>จัดทำใบสั่งซื้อ ตรวจสอบรายละเอียดและเอกสารประกอบให้ถูกต้องครบถ้วน</li>
+            <li>ประสานงานกับผู้ขายและหน่วยงานที่เกี่ยวข้อง เพื่อติดตามสถานะการสั่งซื้อ และควบคุมการส่งมอบให้เป็นไปตามกำหนด</li>
+            <li>เจรจาต่อรองราคาและเงื่อนไขทางการค้า เพื่อควบคุมต้นทุนและสร้างประโยชน์สูงสุดให้แก่องค์กร</li>
+            <li>ตรวจสอบความถูกต้องของสินค้า จำนวน ราคา และเอกสารที่เกี่ยวข้องก่อนส่งต่อให้ฝ่ายบัญชีดำเนินการชำระเงิน</li>
+            <li>จัดเก็บและปรับปรุงข้อมูลผู้ขาย ประวัติการสั่งซื้อ ใบเสนอราคา และเอกสารจัดซื้อให้เป็นปัจจุบัน</li>
+            <li>ประเมินประสิทธิภาพของผู้ขายด้านคุณภาพ ราคา การบริการ และความตรงต่อเวลา</li>
+            <li>ประสานงานแก้ไขปัญหาสินค้าไม่ตรงตามข้อกำหนด สินค้าชำรุด หรือการส่งมอบล่าช้าร่วมกับผู้ขาย</li>
+            <li>จัดทำรายงานสรุปการจัดซื้อและข้อมูลค่าใช้จ่าย เพื่อสนับสนุนการวางแผนและควบคุมงบประมาณของบริษัท</li>
+          </ul>
+        </article>
+
+        <!-- 3. พนักงานขาย บริษัท เวลท์ มีเดีย 360 จำกัด -->
+        <article class="glass-card exp-card">
+          <div class="exp-marker">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <div class="exp-header">
+            <div class="exp-role-group">
+              <h4 class="exp-role">พนักงานขาย</h4>
+              <div class="exp-company">บริษัท เวลท์ มีเดีย 360 จำกัด</div>
+            </div>
+            <div class="exp-period-badge">
+              <i class="far fa-calendar-alt"></i> พ.ค. 2566 – ก.ย. 2566
+            </div>
+          </div>
+
+          <ul class="exp-duties-list">
+            <li>นำเสนอและจำหน่ายสินค้า บริการ และแพ็กเกจสื่อของบริษัทให้แก่ลูกค้า โดยให้คำแนะนำที่เหมาะสมกับความต้องการและงบประมาณ</li>
+            <li>ค้นหาและติดต่อกลุ่มลูกค้าใหม่ พร้อมสร้างโอกาสทางการขายผ่านช่องทางโทรศัพท์ ออนไลน์ และการเข้าพบลุกค้า</li>
+            <li>ดูแลและรักษาความสัมพันธ์กับลูกค้าปัจจุบัน เพื่อสร้างความพึงพอใจและโอกาสในการใช้บริการอย่างต่อเนื่อง</li>
+            <li>วิเคราะห์ความต้องการของลูกค้า จัดทำใบเสนอราคา และนำเสนอแนวทางการสื่อสารหรือประชาสัมพันธ์ที่เหมาะสม</li>
+            <li>เจรจาต่อรองราคา เงื่อนไขการขาย และรายละเอียดการให้บริการ เพื่อให้สามารถปิดการขายได้ตามเป้าหมาย</li>
+            <li>ประสานงานกับฝ่ายการตลาด ฝ่ายผลิต และหน่วยงานที่เกี่ยวข้อง เพื่อดำเนินงานและส่งมอบบริการให้แก่ลูกค้าตามกำหนด</li>
+            <li>ติดตามสถานะงาน การส่งมอบ และการชำระเงิน พร้อมประสานงานแก้ไขปัญหาให้แก่ลูกค้าอย่างรวดเร็ว</li>
+          </ul>
+        </article>
+
+        <!-- 4. เจ้าหน้าที่ธุรการ บริษัท มายด์ เบสท์ จำกัด -->
+        <article class="glass-card exp-card">
+          <div class="exp-marker">
+            <i class="fas fa-folder-open"></i>
+          </div>
+          <div class="exp-header">
+            <div class="exp-role-group">
+              <h4 class="exp-role">เจ้าหน้าที่ธุรการ</h4>
+              <div class="exp-company">บริษัท มายด์ เบสท์ จำกัด</div>
+            </div>
+            <div class="exp-period-badge">
+              <i class="far fa-calendar-alt"></i> เม.ย. 2563 – พ.ค. 2566
+            </div>
+          </div>
+
+          <ul class="exp-duties-list">
+            <li>จัดทำใบเสนอราคา เอกสารการซื้อ–ขาย และเอกสารทางธุรกิจของบริษัทให้ถูกต้องครบถ้วน</li>
+            <li>จัดเตรียมและตรวจสอบเอกสารที่ต้องนำส่งฝ่ายบัญชี เช่น ใบสั่งซื้อ ใบส่งสินค้า ใบแจ้งหนี้ และเอกสารประกอบการชำระเงิน</li>
+            <li>ตรวจสอบความถูกต้องและความสอดคล้องของข้อมูลในเอกสารก่อนนำเสนอผู้มีอำนาจอนุมัติหรือส่งต่อให้หน่วยงานที่เกี่ยวข้อง</li>
+            <li>ดำเนินการสั่งซื้อสินค้า พร้อมตรวจสอบประเภท จำนวน ราคา คุณภาพ และความถูกต้องของสินค้าที่ได้รับ</li>
+            <li>บันทึกและปรับปรุงข้อมูลสต็อกสินค้าและราคาสินค้าให้เป็นปัจจุบัน รวมถึงตรวจสอบความสอดคล้องระหว่างสินค้าคงเหลือกับข้อมูลในระบบ</li>
+            <li>รวบรวมข้อมูลสินค้าและเปรียบเทียบราคาจากผู้จำหน่าย เพื่อสนับสนุนการตัดสินใจสั่งซื้อและควบคุมต้นทุน</li>
+            <li>จัดเก็บประวัติการซื้อ–ขาย ข้อมูลสินค้า และเอกสารสำคัญของบริษัทอย่างเป็นระบบ เพื่อให้สามารถตรวจสอบย้อนหลังได้</li>
+            <li>ประสานงานกับฝ่ายขาย ฝ่ายบัญชี ผู้จำหน่าย และหน่วยงานต่าง ๆ ภายในบริษัท เพื่อสนับสนุนการดำเนินงานให้เป็นไปอย่างมีประสิทธิภาพ</li>
+            <li>จัดเตรียมเอกสารและประสานงานกับหน่วยงานที่เกี่ยวข้องเพื่อดำเนินการขออนุญาตตามข้อกำหนด</li>
+            <li>ให้ข้อมูล คำแนะนำ และคำปรึกษาแก่พนักงานขายและผู้ใช้บริการเกี่ยวกับสินค้า เอกสาร และขั้นตอนการให้บริการ</li>
+            <li>ลงพื้นที่ประสานงาน ให้บริการ และให้คำแนะนำแก่ผู้ใช้บริการโดยตรง พร้อมติดตามและแก้ไขปัญหาที่เกิดขึ้น</li>
+          </ul>
+        </article>
+
+        <!-- 5. ประสบการณ์ทำงานอื่น ๆ -->
+        <div class="other-exp-grid">
+          <article class="glass-card other-exp-card">
+            <h4><i class="fas fa-headset" style="color: var(--neon-cyan);"></i> พนักงานบริการลูกค้า (Customer Support Officer) พาร์ทไทม์</h4>
+            <div class="company-tag">บริษัท ไอที ซิตี้ จำกัด (มหาชน)</div>
+            <ul class="exp-duties-list">
+              <li>ให้บริการลูกค้าและสนับสนุนการขายสินค้าไอทีภายในบูทกิจกรรมของบริษัท</li>
+              <li>แนะนำข้อมูลสินค้า ราคา และโปรโมชัน พร้อมเสนอสินค้าที่เหมาะสมกับความต้องการของลูกค้า</li>
+              <li>ติดต่อและประสานงานกับทีมขาย ผู้จัดงาน และหน่วยงานที่เกี่ยวข้อง เพื่อให้การดำเนินงานเป็นไปอย่างราบรื่น</li>
+              <li>แก้ไขปัญหาเฉพาะหน้าและรับมือกับงานเร่งด่วนจำนวนมากได้อย่างมีประสิทธิภาพ</li>
+              <li>บริหารจัดการงานหลายรายการพร้อมกัน และจัดลำดับความสำคัญของงานภายใต้ข้อจำกัดด้านเวลา</li>
+            </ul>
+          </article>
+
+          <article class="glass-card other-exp-card">
+            <h4><i class="fas fa-ticket-alt" style="color: var(--neon-magenta);"></i> พนักงานอีเวนต์พาร์ตไทม์</h4>
+            <div class="company-tag">งานแสดงสินค้าและกิจกรรมส่งเสริมการขายต่าง ๆ</div>
+            <ul class="exp-duties-list">
+              <li>ปฏิบัติงานพาร์ตไทม์ตามงานอีเวนต์ต่าง ๆ เช่น งานเกม, งาน COMMART และงานมหกรรมหนังสือ</li>
+              <li>ต้อนรับผู้เข้าร่วมงาน ให้ข้อมูลเกี่ยวกับสินค้า บริการ และกิจกรรมภายในบูท</li>
+              <li>สนับสนุนกิจกรรมส่งเสริมการขาย ประชาสัมพันธ์สินค้า และเชิญชวนผู้เข้าร่วมกิจกรรม</li>
+              <li>จัดเตรียมและดูแลความเรียบร้อยของพื้นที่จัดกิจกรรม สินค้า และอุปกรณ์ภายในบูท</li>
+              <li>ประสานงานกับทีมงานและผู้จัดงาน พร้อมแก้ไขปัญหาเฉพาะหน้าเพื่อให้งานดำเนินไปอย่างราบรื่น</li>
+              <li>สามารถปรับตัวให้เข้ากับรูปแบบงาน ทีมงาน และสภาพแวดล้อมที่หลากหลายได้อย่างรวดเร็ว</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: กิจกรรมและรางวัล (ACTIVITIES & AWARDS) -->
+    <section id="educationSummary" class="section-wrapper">
+      <div class="section-header">
+        <div class="section-tag"><i class="fas fa-medal"></i> ACHIEVEMENTS &amp; EXTRA-CURRICULAR</div>
+        <h3 class="section-title">
+          <span class="section-title-icon"><i class="fas fa-trophy"></i></span>
+          3. กิจกรรมและรางวัล (Activities &amp; Awards)
+        </h3>
+        <p class="section-subtitle">ผลงานและบทบาทความเป็นผู้นำในการร่วมกิจกรรมระหว่างการศึกษา</p>
+      </div>
+
+      <div class="awards-grid">
+        <!-- ระดับมัธยมศึกษา -->
+        <article class="glass-card award-box">
+          <div class="award-box-header">
+            <div class="award-box-icon silver">
+              <i class="fas fa-award"></i>
+            </div>
+            <div>
+              <h4 style="color: #fff; font-size: 1.25rem;">กิจกรรมและรางวัลระดับมัธยมศึกษา</h4>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">โรงเรียนมัธยมวัดมกุฏกษัตริย์</p>
+            </div>
+          </div>
+
+          <ul class="award-list">
+            <li class="award-list-item">
+              <i class="fas fa-medal" style="color: #cbd5e1;"></i>
+              <div class="award-list-item-content">
+                <h6>ได้รับรางวัลระดับเหรียญเงิน</h6>
+                <p>จากการแข่งขันทักษะภาษาไทย</p>
+              </div>
+            </li>
+            <li class="award-list-item">
+              <i class="fas fa-atom"></i>
+              <div class="award-list-item-content">
+                <h6>เข้าร่วมการแข่งขันทางวิชาการ</h6>
+                <p>ตัวแทนนักเรียนในการแข่งขันทดสอบความรู้ทางวิชาการ</p>
+              </div>
+            </li>
+            <li class="award-list-item">
+              <i class="fas fa-flag"></i>
+              <div class="award-list-item-content">
+                <h6>ปฏิบัติหน้าที่รองหัวหน้าฝ่ายจัดทำขบวนพาเหรด</h6>
+                <p>บริหารจัดการวางแผนริ้วขบวนและประสานงานกำลังพล</p>
+              </div>
+            </li>
+            <li class="award-list-item">
+              <i class="fas fa-palette"></i>
+              <div class="award-list-item-content">
+                <h6>ปฏิบัติหน้าที่หัวหน้าฝ่ายออกแบบสแตนด์เชียร์</h6>
+                <p>สร้างสรรค์คอนเซปต์และควบคุมการตกแต่งสแตนด์เชียร์</p>
+              </div>
+            </li>
+            <li class="award-list-item">
+              <i class="fas fa-bullhorn"></i>
+              <div class="award-list-item-content">
+                <h6>เป็นสมาชิกฝ่ายประชาสัมพันธ์ของโรงเรียน</h6>
+                <p>สื่อสาร ประชาสัมพันธ์ข้อมูล และจัดกิจกรรมภายในสถานศึกษา</p>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <!-- ระดับอุดมศึกษา -->
+        <article class="glass-card award-box">
+          <div class="award-box-header">
+            <div class="award-box-icon gold">
+              <i class="fas fa-comments"></i>
+            </div>
+            <div>
+              <h4 style="color: #fff; font-size: 1.25rem;">กิจกรรมระดับอุดมศึกษา</h4>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</p>
+            </div>
+          </div>
+
+          <ul class="award-list">
+            <li class="award-list-item">
+              <i class="fas fa-microphone-alt" style="color: var(--neon-cyan);"></i>
+              <div class="award-list-item-content">
+                <h6>เข้าร่วมการแข่งขันโต้วาทีในระดับมหาวิทยาลัย</h6>
+                <p>ฝึกฝนทักษะการคิดวิเคราะห์อย่างมีวิจารณญาณ การให้เหตุผลเชิงตรรกะ และการนำเสนอข้อมูลในที่สาธารณะ</p>
+              </div>
+            </li>
+            <li class="award-list-item">
+              <i class="fas fa-users" style="color: var(--neon-violet);"></i>
+              <div class="award-list-item-content">
+                <h6>การทำงานร่วมกับองค์กรนักศึกษาและกลุ่มวิชาการ</h6>
+                <p>มีส่วนร่วมในการจัดสัมมนาเชิงวิชาการด้านสถิติและการประกันภัย</p>
+              </div>
+            </li>
+            <li class="award-list-item">
+              <i class="fas fa-hand-holding-heart" style="color: var(--neon-magenta);"></i>
+              <div class="award-list-item-content">
+                <h6>กิจกรรมส่งเสริมจิตสาธารณะและบำเพ็ญประโยชน์</h6>
+                <p>พัฒนาทักษะการสื่อสาร การปรับตัวเข้ากับสภาพแวดล้อมที่หลากหลาย และการทำงานเป็นทีม</p>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ความสามารถพิเศษ (SKILLS & SPECIAL ABILITIES) -->
+    <section id="skills" class="section-wrapper">
+      <div class="section-header">
+        <div class="section-tag"><i class="fas fa-magic"></i> PROFESSIONAL COMPETENCIES</div>
+        <h3 class="section-title">
+          <span class="section-title-icon"><i class="fas fa-laptop-code"></i></span>
+          4. ความสามารถพิเศษและทักษะ (My Skills)
+        </h3>
+        <p class="section-subtitle">ทักษะเชิงนโยบาย การบริหารโครงการ การเจรจาต่อรอง และเทคโนโลยีดิจิทัล</p>
+      </div>
+
+      <div class="skills-layout">
+        <!-- ความสามารถหลักด้านนโยบาย การบริหาร และธุรกิจ -->
+        <div class="glass-card skills-group-card">
+          <h4 class="skill-category-title">
+            <i class="fas fa-chess-knight" style="color: var(--neon-cyan);"></i> ทักษะการวิเคราะห์ นโยบาย และการบริหาร
+          </h4>
+          <div class="skill-chips-container">
+            <span class="skill-chip"><i class="fas fa-chart-pie"></i> การศึกษาวิเคราะห์ และสังเคราะห์ข้อมูลเชิงนโยบาย</span>
+            <span class="skill-chip"><i class="fas fa-sitemap"></i> การจัดทำนโยบาย แผนยุทธศาสตร์ และแผนปฏิบัติราชการ</span>
+            <span class="skill-chip"><i class="fas fa-file-invoice-dollar"></i> การจัดทำข้อเสนอโครงการและคำของบประมาณ</span>
+            <span class="skill-chip"><i class="fas fa-tasks"></i> การบริหาร ติดตาม และประเมินผลโครงการ</span>
+            <span class="skill-chip"><i class="fas fa-bullseye"></i> การกำหนดและวิเคราะห์ตัวชี้วัดความสำเร็จ (KPIs)</span>
+            <span class="skill-chip"><i class="fas fa-file-contract"></i> การจัดทำรายงานสรุป ข้อเสนอแนะเชิงนโยบายสำหรับผู้บริหาร</span>
+            <span class="skill-chip"><i class="fas fa-envelope-open-text"></i> การจัดทำหนังสือราชการและเอกสารประกอบการประชุม</span>
+            <span class="skill-chip"><i class="fas fa-handshake-angle"></i> การประสานความร่วมมือภาครัฐ ภาคเอกชน และสถาบันอุดมศึกษา</span>
+            <span class="skill-chip"><i class="fas fa-users-cog"></i> การจัดประชุมเชิงนโยบายและการประชุมเชิงปฏิบัติการ</span>
+            <span class="skill-chip"><i class="fas fa-file-invoice"></i> การจัดทำและตรวจสอบเอกสารทางธุรกิจ</span>
+            <span class="skill-chip"><i class="fas fa-boxes-stacked"></i> การจัดการข้อมูลสินค้า ราคา และสต็อก</span>
+            <span class="skill-chip"><i class="fas fa-headset"></i> การบริการลูกค้าและสนับสนุนการขาย</span>
+            <span class="skill-chip"><i class="fas fa-comments-dollar"></i> การสื่อสาร การนำเสนอ และการเจรจาต่อรอง</span>
+            <span class="skill-chip"><i class="fas fa-shield-halved"></i> การแก้ไขปัญหาเฉพาะหน้าและการตัดสินใจ</span>
+            <span class="skill-chip"><i class="fas fa-hourglass-half"></i> การบริหารเวลาและจัดลำดับความสำคัญ</span>
+            <span class="skill-chip"><i class="fas fa-people-group"></i> การทำงานเป็นทีมและการปรับตัว</span>
+          </div>
+        </div>
+
+        <!-- ทักษะด้านโปรแกรม เทคโนโลยี และ AI Tools -->
+        <div class="glass-card skills-group-card">
+          <h4 class="skill-category-title">
+            <i class="fas fa-microchip" style="color: var(--neon-violet);"></i> โปรแกรมและเทคโนโลยีดิจิทัล
+          </h4>
+          <div class="tech-tools-grid">
+            <!-- AI Tools -->
+            <div class="tech-tool-card" style="grid-column: 1 / -1;">
+              <div class="tech-tool-icon ai">
+                <i class="fas fa-robot"></i>
+              </div>
+              <div class="tech-tool-info">
+                <h5>Generative AI (ChatGPT, Gemini, Claude)</h5>
+                <p>การค้นคว้า วิเคราะห์ข้อมูล สรุปรายงาน จัดทำเอกสาร และพัฒนางานนำเสนอ</p>
+              </div>
+            </div>
+
+            <!-- Microsoft Excel -->
+            <div class="tech-tool-card">
+              <div class="tech-tool-icon excel">
+                <i class="fas fa-file-excel"></i>
+              </div>
+              <div class="tech-tool-info">
+                <h5>Microsoft Excel</h5>
+                <p>วิเคราะห์ข้อมูล คำนวณ สถิติ และฐานข้อมูล</p>
+              </div>
+            </div>
+
+            <!-- Microsoft Word -->
+            <div class="tech-tool-card">
+              <div class="tech-tool-icon word">
+                <i class="fas fa-file-word"></i>
+              </div>
+              <div class="tech-tool-info">
+                <h5>Microsoft Word</h5>
+                <p>หนังสือราชการ ร่างเอกสารนโยบาย</p>
+              </div>
+            </div>
+
+            <!-- Microsoft PowerPoint -->
+            <div class="tech-tool-card">
+              <div class="tech-tool-icon ppt">
+                <i class="fas fa-file-powerpoint"></i>
+              </div>
+              <div class="tech-tool-info">
+                <h5>Microsoft PowerPoint</h5>
+                <p>การออกแบบสไลด์นำเสนอเชิงผู้บริหาร</p>
+              </div>
+            </div>
+
+            <!-- ERP -->
+            <div class="tech-tool-card">
+              <div class="tech-tool-icon erp">
+                <i class="fas fa-network-wired"></i>
+              </div>
+              <div class="tech-tool-info">
+                <h5>ระบบ ERP</h5>
+                <p>การจัดซื้อ สต็อก และบริหารข้อมูลองค์กร</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: สถานที่ติดต่อ (CONTACT) -->
+    <section id="contact" class="section-wrapper">
+      <div class="section-header">
+        <div class="section-tag"><i class="fas fa-address-card"></i> GET IN TOUCH</div>
+        <h3 class="section-title">
+          <span class="section-title-icon"><i class="fas fa-paper-plane"></i></span>
+          2. สถานที่ติดต่อ (Contact Information)
+        </h3>
+        <p class="section-subtitle">ช่องทางการติดต่อประสานงาน ส่งเอกสาร และนัดหมายราชการ</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Contact Methods -->
+        <div class="glass-card contact-info-card">
+          <!-- Phone -->
+          <div class="contact-method">
+            <div class="contact-icon-box">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-details">
+              <div class="contact-label">เบอร์โทรศัพท์</div>
+              <div class="contact-val">097 020 1747</div>
+            </div>
+            <button class="copy-btn" data-copy="0970201747" title="คัดลอกเบอร์โทร">
+              <i class="fas fa-copy"></i>
+            </button>
+            <a href="tel:0970201747" class="copy-btn" title="โทรออกทันที">
+              <i class="fas fa-phone"></i>
+            </a>
+          </div>
+
+          <!-- Email -->
+          <div class="contact-method">
+            <div class="contact-icon-box">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <div class="contact-label">อีเมลติดต่อ</div>
+              <div class="contact-val">praploy.ps@gmail.com</div>
+            </div>
+            <button class="copy-btn" data-copy="praploy.ps@gmail.com" title="คัดลอกอีเมล">
+              <i class="fas fa-copy"></i>
+            </button>
+            <a href="mailto:praploy.ps@gmail.com" class="copy-btn" title="ส่งอีเมล">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <!-- Address -->
+          <div class="contact-method">
+            <div class="contact-icon-box">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <div class="contact-details">
+              <div class="contact-label">สถานที่ติดต่อ / ที่อยู่</div>
+              <div class="contact-val" style="font-size: 0.98rem; font-weight: 500;">
+                63/199 หมู่ 7 ต.บางรักพัฒนา อ.บางบัวทอง จ.นนทบุรี
+              </div>
+            </div>
+            <button class="copy-btn" data-copy="63/199 หมู่ 7 ต.บางรักพัฒนา อ.บางบัวทอง จ.นนทบุรี" title="คัดลอกที่อยู่">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Interaction Form -->
+        <div class="glass-card contact-form-card">
+          <h4><i class="fas fa-envelope-open-text" style="color: var(--neon-cyan);"></i> ฝากข้อความติดต่อ</h4>
+          <p>ส่งข้อความเพื่อติดต่อประสานงานหรือสอบถามข้อมูลเพิ่มเติม</p>
+
+          <form id="contactForm">
+            <div class="glass-form-group">
+              <label for="senderName" class="glass-form-label">ชื่อ - นามสกุล หรือ หน่วยงาน</label>
+              <input type="text" id="senderName" class="glass-input" placeholder="เช่น กองยุทธศาสตร์และแผนงาน" required>
+            </div>
+
+            <div class="glass-form-group">
+              <label for="senderEmail" class="glass-form-label">อีเมลหรือเบอร์โทรศัพท์ติดต่อกลับ</label>
+              <input type="text" id="senderEmail" class="glass-input" placeholder="เช่น your-email@domain.com หรือ 081-xxx-xxxx" required>
+            </div>
+
+            <div class="glass-form-group">
+              <label for="senderSubject" class="glass-form-label">หัวข้อเรื่อง</label>
+              <input type="text" id="senderSubject" class="glass-input" placeholder="เรื่องที่ต้องการประสานงาน" required>
+            </div>
+
+            <div class="glass-form-group">
+              <label for="senderMessage" class="glass-form-label">ข้อความรายละเอียด</label>
+              <textarea id="senderMessage" class="glass-input" placeholder="ระบุรายละเอียดที่ต้องการติดต่อ..." required></textarea>
+            </div>
+
+            <button type="submit" class="glass-btn glass-btn-primary" style="width: 100%;">
+              <i class="fas fa-paper-plane"></i> ส่งข้อความติดต่อ
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       FLUID WIDTH LIGHT GRAY FOOTER (ตามข้อกำหนดของโจทย์)
+       "footer fluid width เติมสีพื้นหลัง เทาอ่อน ระบบเว็บส่วนบุคคล พัฒนาโดย [แพรพลอย สิงห์ทองชัย]"
+       ========================================================================= -->
+  <footer class="fluid-footer">
+    <div class="footer-container">
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <img src="247372.jpg" alt="แพรพลอย สิงห์ทองชัย" class="footer-avatar">
+          <div>
+            <div class="footer-brand-title">นางสาวแพรพลอย สิงห์ทองชัย</div>
+            <div class="footer-brand-subtitle">นักวิเคราะห์นโยบายและแผนปฏิบัติการ | สำนักงานปลัดกระทรวงการอุดมศึกษาฯ (อว.)</div>
+          </div>
+        </div>
+
+        <ul class="footer-quick-links">
+          <li><a href="#education">ประวัติการศึกษา</a></li>
+          <li><a href="#experience">ประสบการณ์ทำงาน</a></li>
+          <li><a href="#skills">ความสามารถพิเศษ</a></li>
+          <li><a href="#educationSummary">กิจกรรมและรางวัล</a></li>
+          <li><a href="#contact">สถานที่ติดต่อ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div class="footer-highlight-text">
+          <i class="fas fa-code-branch" style="color: #0284c7;"></i>
+          <span>ระบบเว็บส่วนบุคคล พัฒนาโดย</span>
+          <span class="footer-dev-badge">[แพรพลอย สิงห์ทองชัย]</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 18px;">
+          <span class="footer-copyright">© 2026 Portfolio &amp; Report Application. All Rights Reserved.</span>
+          <button id="backToTopBtn" class="back-to-top-btn" title="กลับสู่ด้านบน">
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="app.js"></script>
+</body>
+</html>
